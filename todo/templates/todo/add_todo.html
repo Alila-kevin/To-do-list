@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add To-Do</title>
+</head>
+<body>
+    <h1>Add To-Do Item</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="title" required>
+        <button type="submit">Add</button>
+    </form>
+    <p>Debug: Is URL available? {% if 'todo_list' in url_patterns %}Yes{% else %}No{% endif %}</p>
+    <a href="{% url 'todo_list' %}">Back to list</a>
+</body>
+</html>
